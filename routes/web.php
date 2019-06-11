@@ -11,28 +11,7 @@
 |
 */
 
-Route::get('/', function () {
-	$test = request('test');
-	$posts = [
-		'Postimi 1',
-		'Postimi 2',
-		'Postimi 3',
-		'Postimi 4'
-	];
-    // return view('home',[
-    // 	'posts'=>$posts,
-    // 	'test'=>$test
-    // ]);
-
-	return view('home',compact('test','posts'));
-});
-
-
-Route::get('/about', function () {
-    return view('about');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/', "PageController@home");
+Route::get('/about', "PageController@about");
+Route::get('/contact', "PageController@contact");
 
